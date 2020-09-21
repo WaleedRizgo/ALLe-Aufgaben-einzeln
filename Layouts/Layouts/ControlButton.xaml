@@ -1,0 +1,18 @@
+﻿<Window x:Class="Layouts.ControlButton"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ControlButton" Height="253" Width="300">
+    <Grid>
+         <!--Button-->
+<Button Height="70" Width="50" Click="Button_Click"
+                Margin="22">
+            <StackPanel>
+                <TextBlock FontSize="14"
+                           FontFamily="Times New Roman Bold"
+                           Text="Click" HorizontalAlignment="Center"/>
+                <Image Source="Images/business_people.png"
+                       Stretch="Fill" />
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,33 @@
+﻿<Window x:Class="Layouts.LayoutCanvas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LayoutCanvas" Height="300" Width="364">
+    <Grid>
+         <!--Canvas-->
+        <Canvas Width="200"
+                        Height="150">
+            <Ellipse Fill="Red"
+                             Stroke="Blue"
+                             Canvas.Left="10"
+                             Canvas.Top="50"
+                             Width="100"
+                             Height="50"
+                             HorizontalAlignment="Left"></Ellipse>
+            <Rectangle Fill="Yellow"
+                               Stroke="Blue"
+                               Canvas.Left="30"
+                               Canvas.Top="40"
+                               Width="100"
+                               Height="50"
+                               HorizontalAlignment="Left"></Rectangle>
+            <Ellipse Fill="Blue"
+                             Stroke="Blue"
+                             Canvas.Right="10"
+                             Canvas.Top="30"
+                             Width="100"
+                             Height="50"
+                             HorizontalAlignment="Left"></Ellipse>
+        </Canvas>
+
+    </Grid>
+</Window>

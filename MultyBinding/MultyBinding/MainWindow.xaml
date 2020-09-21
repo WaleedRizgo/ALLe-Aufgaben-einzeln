@@ -1,0 +1,49 @@
+﻿<Window x:Class="MultyBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="378.737" Width="525">
+    <Window.Resources>       
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Slider Name="SliderFontSize" TickFrequency="10" TickPlacement="TopLeft" Minimum="1" Maximum="300" Value="1" Margin="10" />
+        <StackPanel Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Inter Text :" Margin="4" />
+                <TextBox Name="InputTxt" Grid.Column="1"/>
+                <Label Content="Chose color :" Margin="4" Grid.Row="1" />
+                <ListBox Name="SelectedColor" Grid.Column="1" Grid.Row="1" FontSize="14">
+                    <ListBoxItem Background="Red" Margin="3" Tag="Red">Red</ListBoxItem>
+                    <ListBoxItem Margin="2" Background="Blue" Tag="Blue">Blue</ListBoxItem>
+                    <ListBoxItem Margin="2" Background="Yellow" Tag="Yellow">Yellow</ListBoxItem>
+                    <ListBoxItem Margin="2" Background="Green" Tag="Green">Green</ListBoxItem>
+                    <ListBoxItem Margin="2" Background="DarkBlue" Tag="DarkBlue">Dark Blue</ListBoxItem>
+                    <ListBoxItem Margin="2" Background="Black" Tag="Black" Foreground="White">Black</ListBoxItem>
+                </ListBox>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Row="2" >
+            <TextBlock Name="ResultTxt" Margin="5" TextWrapping="Wrap" 
+                       HorizontalAlignment="Left"
+                      Text="{Binding ElementName=InputTxt,Path=Text,Mode=TwoWay}">
+               
+            </TextBlock>
+            <!--FontSize="{Binding ElementName=SliderFontSize,Path=Value,Mode=TwoWay}"
+                      Foreground="{Binding ElementName=SliderFontSize,Path=Value,Mode=TwoWay}"-->
+            <Button Click="Standart_btn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="4" Padding="4">Standart Parameter</Button>
+            <Button Content="Other_Form" HorizontalAlignment="Right" Height="26" Margin="0,4,4,4" Width="111" Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

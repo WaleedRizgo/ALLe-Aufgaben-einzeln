@@ -1,0 +1,28 @@
+﻿<Window x:Class="Layouts.ControlComboBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ControlComboBox" Height="300" Width="359">
+    <Grid>
+        <!--ComboBox-->
+              <ComboBox VerticalAlignment="Top" Margin="5" SelectedIndex="0">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Images/business_people.png" Stretch="None"/>
+                <TextBlock Text="Usesr 1"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Images/business_people.png" Stretch="None"/>
+                <TextBlock Text="Usesr 2"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Images/business_people.png" Stretch="None"/>
+                <TextBlock Text="Usesr 3"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Images/business_people.png" Stretch="None"/>
+                <TextBlock Text="Usesr 4"/>
+            </StackPanel>
+        </ComboBox>
+
+
+    </Grid>
+</Window>

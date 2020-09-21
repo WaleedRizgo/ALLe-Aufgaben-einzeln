@@ -1,0 +1,73 @@
+﻿<Window x:Class="MVVM3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM3"
+        mc:Ignorable="d"
+        xmlns:y="clr-namespace:MVVM3.ViewModel" 
+        Title="MainWindow" Height="500" Width="600">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <DataGrid Name="grdemps" VerticalScrollBarVisibility="Visible" Grid.Row="0" ItemsSource="{Binding Source={x:Static y:EmployeeViewModel.Employees}}" AutoGenerateColumns="False" RowHeight="45" FontSize="14" ColumnWidth="*" Foreground="Black" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Single" SelectionChanged="grdemps_SelectionChanged" >
+                <DataGrid.Columns>
+                    <!--جدول الأسفل--> 
+                    <DataGridTextColumn Binding="{Binding ID}" Header="ID" />
+                    <DataGridTextColumn Binding="{Binding Titel}" Header="Titel" />
+                    <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
+                    <DataGridComboBoxColumn ItemsSource="{Binding Source={x:Static y:EmployeeViewModel.Jobs}}" SelectedValuePath="ID" SelectedValueBinding="{Binding Job.ID}" DisplayMemberPath="Name">
+                     
+                    </DataGridComboBoxColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+        <Grid DataContext="{Binding ElementName=grdemps, Path=SelectedItem}" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="ID:"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Titel"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="Name:"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="Job"/>
+
+            <TextBox Name="txtID" Text="{Binding ID}" Grid.Row="0" Grid.Column="1" Margin="3,3,0,3" />
+            <TextBox Name="txtTitel" Text="{Binding Titel}" Grid.Row="1" Grid.Column="1" Margin="3,3,0,3" />
+            <TextBox Name="txtname" Text="{Binding Name}" Grid.Row="2" Grid.Column="1" Margin="3,3,0,3" />
+            <ComboBox Name="cmbJob" Grid.Row="3" Grid.Column="1"  ItemsSource="{Binding Source={x:Static y:EmployeeViewModel.Jobs}}" SelectedValue="{Binding Job.ID}" SelectedValuePath="ID" Margin="3,3,0,3" IsSynchronizedWithCurrentItem="True">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding ID}" Width="125" />
+                            <TextBlock Text="{Binding Name}" Margin="7,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+
+
+
+        </Grid>
+
+    </Grid>
+</Window>
+

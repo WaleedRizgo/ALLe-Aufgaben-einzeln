@@ -1,0 +1,12 @@
+﻿<Window x:Class="Layouts.ControlInkCanvas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ControlInkCanvas" Height="345" Width="490">
+    <Grid>
+         <!--InkCanvas-->
+        <InkCanvas Name="InkCanavss" Background="DarkTurquoise" EditingMode="Ink">
+            <Image Source="Images/Bill_Steve.jpg" InkCanvas.Top="3" InkCanvas.Left="10"></Image>
+        </InkCanvas>
+
+    </Grid>
+</Window>

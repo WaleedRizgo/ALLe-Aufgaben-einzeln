@@ -1,0 +1,18 @@
+﻿<Window x:Class="Layouts.ControlExpander"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ControlExpander" Height="300" Width="392">
+    <Grid>
+          <!--Expander-->
+        <Border Margin="6,6,6,0" BorderBrush="Yellow" BorderThickness="2" CornerRadius="3">
+            <Expander Header="Region One" Margin="5" ExpandDirection="Down">
+                <TextBlock Padding="4" TextWrapping="Wrap">
+                Life gets a little interesting when using different ExpandDirection values, because the effect on the
+                rest of your user interface depends on the type of container. Some containers, such as the WrapPanel,
+                 simply bump other elements out of the way.
+                </TextBlock>
+
+            </Expander>
+        </Border>
+    </Grid>
+</Window>
